@@ -9,3 +9,5 @@ Route.post('auth','SessionController.store')
 
 Route.post('password','ForgotPasswordController.store')
 Route.put('update-pass','ForgotPasswordController.update')
+
+Route.post('files','FileController.store')
