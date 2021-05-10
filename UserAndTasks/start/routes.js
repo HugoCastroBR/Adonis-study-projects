@@ -23,7 +23,8 @@ Route.put('/update-user/:id',"UserController.update")
 
 Route.post('/auth', "AuthController.store")
 
-
+Route.post('reset-password','ResetPasswordController.store')
+Route.put('reset-password','ResetPasswordController.update')
 
 Route.group(() => {
   Route.resource('/tasks',"TaskController").apiOnly()

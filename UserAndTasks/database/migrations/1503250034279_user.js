@@ -15,6 +15,8 @@ class UserSchema extends Schema {
       table.string('number2')
       table.string('twitter',100)
       table.string('facebook',100)
+      table.string('token')
+      table.timestamp('token_created_at')
       table.boolean('is_active')
       table.timestamps()
     })
