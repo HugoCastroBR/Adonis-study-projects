@@ -11,18 +11,14 @@ class UserController {
         const user = await User.create(data)
         return user
         
-
         
     }
 
     async update ({request,response,params}) {
         const user = await User.findOrFail(params.id)
         const data = request.only(['username','about','number','number2','twitter','facebook'])
-
         user.merge(data)
-    
         await user.save()
-    
         return user
     }
 

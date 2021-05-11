@@ -14,9 +14,7 @@ class TaskController {
   
   async store ({ request, response,auth }) {
     const data = request.only(['title','description'])
-
     const CreateTask = await Task.create({...data,user_id: auth.user.id})
-
     return CreateTask
   }
 
@@ -35,17 +33,13 @@ class TaskController {
   async update ({params,request,response}) {
     const task = await Task.findOrFail(params.id)
     const data = request.only(['title','description'])
-
     task.merge(data)
-
     await task.save()
-
     return task
   }
 
   async destroy ({params}) {
     const task = await Task.findOrFail(params.id)
-
     await task.delete()
   }
 
